@@ -370,7 +370,7 @@ public class Hungry {
 	@PostMapping("/api/v1/Order/customer/")
 	@ResponseBody
 	public ResponseEntity<String> getProductContainName(@RequestBody Customer customer) {
-		String clientOrderJsonfinal=null;
+		String clientOrderJson=null;
 		if (customer == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 		}
@@ -386,7 +386,7 @@ public class Hungry {
 			SimpleModule module = new SimpleModule("CustomCarSerializer", new Version(1, 0, 0, null, null, null));
 			module.addSerializer(ClientOrder.class, new CustomClientOrderSerializer());
 			mapper.registerModule(module);
-			String clientOrderJson;
+			
 			try {
 				clientOrderJson = mapper.writeValueAsString(clientOrder);
 			} catch (JsonProcessingException e) {
@@ -394,9 +394,8 @@ public class Hungry {
 				return ResponseEntity.status(HttpStatus.ACCEPTED).body(null);
 			}
 //			clientOrderJsons.add(clientOrderJson);
-			clientOrderJsonfinal = clientOrderJson;
 		}
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body(clientOrderJsonfinal);
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(clientOrderJson);
 	}
 
 }
