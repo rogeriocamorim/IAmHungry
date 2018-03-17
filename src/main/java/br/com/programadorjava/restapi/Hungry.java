@@ -392,5 +392,19 @@ public class Hungry {
         });
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(listTemp);
     }
+    
+    @GetMapping("/api/v1/Order/cancel/{orderId}")
+    @ResponseBody
+    public ResponseEntity<ClientOrder> cancelOrderById(@PathVariable("orderId") Integer orderId) {
+
+        Optional<ClientOrder> optClientOrder = clientOrderRepository.findById(orderId);
+        if (optClientOrder.isPresent()) {
+           optClientOrder.get().setStatus("Cancel");
+           clientOrderRepository.saveAndFlush(optClientOrder.get());
+           return ResponseEntity.status(HttpStatus.ACCEPTED).body(optClientOrder.get());
+        }
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(null);
+
+    }
 
 }
