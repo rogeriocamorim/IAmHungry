@@ -34,7 +34,7 @@ public class OrderItem implements Serializable {
 	private Product product;
 	
 	@JsonIgnore
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "client_order_id")	
 	private ClientOrder clientOrder;
 	

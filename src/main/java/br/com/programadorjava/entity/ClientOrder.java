@@ -15,6 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 @Entity
 @Table(name = "clientOrden")
 public class ClientOrder implements Serializable {
@@ -30,11 +33,12 @@ public class ClientOrder implements Serializable {
 
 	private String date;
 
+	@JsonProperty(access = Access.WRITE_ONLY)
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
 	@JoinColumn(name = "ordenitem_id")
 	private List<OrderItem> ordemItems;
 
@@ -122,6 +126,10 @@ public class ClientOrder implements Serializable {
 
 	public ClientOrder() {
 	}
+	
+	
+
+	
 
 	@Override
 	public String toString() {

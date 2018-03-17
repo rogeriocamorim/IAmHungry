@@ -26,8 +26,7 @@ public class CustomClientOrderSerializer extends StdSerializer<ClientOrder> {
 		jsonGenerator.writeStringField("Order Id", String.valueOf(clientOrder.getId()));
 		jsonGenerator.writeStringField("Customer", clientOrder.getCustomer().getName());
 		jsonGenerator.writeStringField("deliveryAddress", clientOrder.getDeliveryAddress());
-		jsonGenerator.writeStringField("contact", clientOrder.getContact());
-		
+		jsonGenerator.writeStringField("contact", clientOrder.getContact());		
 		jsonGenerator.writeStringField("total", String.valueOf(clientOrder.getTotal()));
 		jsonGenerator.writeStringField("status", clientOrder.getStatus());
 

@@ -32,7 +32,7 @@ public class Customer implements Serializable {
 	private String creation;
 	private String password;	
 	
-	@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
 	private List<ClientOrder> listaOrden;
 	
 	public int getId() {
