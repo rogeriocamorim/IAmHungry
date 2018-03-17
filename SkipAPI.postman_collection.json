@@ -1,0 +1,342 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SkipAPI",
+		"_postman_id": "6499fe4e-9117-90ae-7631-dabbebefe845",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Customer",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"rogerio07081985@gmail.com\",\n  \"name\":\"Rogério Camorim\",\n  \"address\":\"Av Jaime Poggi\",\n  \"password\": \"1234\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cousine",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Cousine",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Cousine/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Chinesse\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cousines",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Cousine",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Vietnam\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cousines by name",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Cousine/search/a",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant with cousine id",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Cousine/1/stores",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"description": "",
+			"item": [
+				{
+					"name": "add Restaurant",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Restaurant/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Fogo de chão\",\n  \"address\":\"42th Street\",\n  \"cousine\":{\n    \"name\":\"BBK\"\n  }\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Store",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants by name",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Store/search/fo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants by id",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Store/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants by name",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Store/search/fo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Product to Restaurant",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Product/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Frango grelhado\",\n  \"description\":\"Frango grelhado com arroz frito\",\n  \"restaurant\":{\n    \"name\":\"Pong-Pong\"\n  },\n  \"price\":14.60\n  \n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Product",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products by id",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Product/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products by name",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Product/search/Pi",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Order/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"customer\":{\n    \"email\":\"rogerio07081985@gmail.com\",\n    \"password\":\"1234\"\n  },\n  \"ordemItems\":[\n          {\n            \"product\": {\n            \"name\": \"Picanha Maturada\"\n          },\n          \"quantity\": 7\n          },\n          {\n            \"product\": {\n            \"name\": \"Baby Beef\"\n          },\n          \"quantity\": 2\n          }\n          \n        ],\n  \"deliveryAddress\": \"32th Street\",\n  \"contact\": \"2198741286\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get order id",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Order/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by Custmer",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Order/customer/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n    \"email\":\"rogerio07081985@gmail.com\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order By Id",
+					"request": {
+						"url": "http://localhost:8088/IAmHungry/api/v1/Order/cancel/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
